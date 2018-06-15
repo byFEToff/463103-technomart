@@ -11,12 +11,7 @@ a {
 .container {
     width: 940px;
     margin: 0 auto;
-}
-
-.clearfix:after {
-    content: "";
-    display: table;
-    clear: both;
+    padding: 0 10px;
 }
 
 .visually-hidden {
@@ -33,22 +28,24 @@ a {
 
 
 /*ВЕРХНЯЯ ЧАСТЬ ШАПКИ*/
-
 .main-header-top {
     background-color: #293449;
     height: 42px;
+}
+
+.main-header-top .container {
+    display: flex;
 }
 .header-logo a{
     background-color: #ee3643;
     text-align: center;
     width: 220px;
-    padding: 9px 0;
+    padding: 10px 0 8px;
     box-shadow: 0 5px 0 0 #b52933;
     font-size: 24px;
     line-height: 24px;
     display: block;
-    float: left;
-    text-transform:uppercase;
+    text-transform: uppercase;
 }
 .header-logo a:hover {
     background-color: #ca2c37;
@@ -58,14 +55,13 @@ a {
     background-color: #ba2732;
     box-shadow: 0 5px 0 0 #8e1e26;
 }
-
 .search {
     background: none;
     border: none;
-    float: left;
     height: 42px;
     padding-left:49px;
     width: 270px;
+    color: #fff;
 }
 .search:hover {
     background-color: #212a3a;
@@ -73,10 +69,12 @@ a {
 .search:focus {
     background-color: #fff;
     outline: none;
+    color: #000;
 }
 .search:focus::placeholder {
     color: #000;
 }
+
 .search::placeholder {
     color: #fff;
     font-size: 17px;
@@ -93,11 +91,12 @@ a {
 }
 .user-navigation a {
     text-align: center;
-    width: 150px;
     display: inline-block;
+    width: 150px;
     font-size: 17px;
     line-height: 18px;
     padding: 12px 0px;
+    box-sizing: border-box;
 }
 .user-navigation a:hover{
     background-color: #212a3a;
@@ -120,50 +119,71 @@ a {
 .user-navigation .order {
     background-color: #63a63e;
 }
+.user-navigation .tabs {
+    padding-left: 16px;
+}
+.user-navigation .basket {
+    padding-left: 18px;
+}
 
 
 
 /*НИЖНЯЯ ЧАСТЬ ШАПКИ*/
-
 .main-header-bottom {
     background-color: #f2f6f8;
     padding-top:46px;
     padding-bottom: 60px;
 }
+
+.main-header-bottom .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-header-wrapper {
+    width: 100%;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+}
 .main-header-bottom h1 {
-    display: block;
     font-size: 16px;
     line-height: 23px;
     color: #ee3643;
     font-style: italic;
     margin: 0;
-    margin-right: 18px;
-    width: 196px;
-    padding: 0 53px;
-    float: left;
+    padding-left: 52px;
+    padding-top: 3px;
+    width: 224px;
+    font-weight: 100;
 }
 .header-data {
     width: 270px;
-    float: left;
     text-align: center;
+    margin: 0;
+    margin-left: 44px;
+    margin-right: auto;
 }
 .header-data .phone {
     font-size: 21px;
     line-height: 21px;
     color: #ee3643;
     border: 3px solid #fff;
-    padding: 10px 0;
+    padding: 9px 0;
+    padding-left: 20px;
 }
 .header-data .address {
     font-size: 14px;
     line-height: 24px;
     color:#32425c;
     margin:0;
+    padding: 4px;
 }
 
 .header-user-panel ul {
     list-style: none;
-    padding: 0;
+    padding: 7px;
+    padding-left: 18px;
     margin: 0;
 }
 .header-user-panel li {
@@ -172,18 +192,43 @@ a {
 .header-user-panel > a {
     color: #000;
     background-color: #fff;
+    padding: 12px 10px;
+    display: inline-block;
+    font-size: 21px;
+    line-height: 21px;
 }
+
 .header-user-panel ul a {
     color: #32425c;
     font-size: 16px;
     line-height: 18px;
     text-decoration: underline;
 }
+.header-user-panel ul a:hover {
+    color: #ee3643;
+}
+.header-user-panel .login {
+    padding-left: 47px;
+    padding-right: 26px;
+}
+.header-user-panel .register {
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: 6px;
+}
+.header-user-panel .login:hover,
+.header-user-panel .register:hover {
+    color: #ee3643;
+}
+.header-user-panel .user-name {
+    padding-left: 47px;
+    padding-right: 67px;
+}
 
 .site-navigation {
     background-color: #32425c;
     border-bottom: 5px solid #293449;
-    margin-top:47px;
+    width: 100%;
 }
 .site-navigation ul {
     padding: 0 20px;
