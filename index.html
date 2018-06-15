@@ -65,19 +65,21 @@
         <section class = "category">    
             <div class = "container">
                 <h2 class = "visually-hidden">Категории</h2> 
-                <div class = "category-materials">
+                <div class = "category-item materials">
                     <h3>Материалы</h3>
                     <a href = "#" class = "btn-style-white">На любой вкус</a>
                 </div>      
-                <div class = "category-tools">
-                    <h3>Инструменты</h3>
+                <div class = "category-item tools">
+                    <h3>Инструмент</h3>
                     <a href = "#" class = "btn-style-white">На все случаи</a>
                 </div>
-                <div class = "category-equipment">
+                <div class = "category-item equipment">
                     <h3>Техника</h3>
                     <a href = "#" class = "btn-style-white">Для стройки</a>
                 </div>
-                <div class = "category-slider">
+            </div>
+            <div class = "container">
+                <div class = "category-item slider">
                     <div class = "slide slide-active">
                         <h3>Перфораторы</h3>
                         <p>Настоящие мужские игрушки</p>
@@ -89,21 +91,23 @@
                         <a href = "catalog.html" class = "btn-style-red">Открыть каталог</a>
                     </div>
                     <div class = "slider-buttons">
-                        <button class = "slider-arrow-left" type = "button">Влево</button>
-                        <button class = "slider-arrow-right" type = "button">Вправо</button>
-
-                        <button class = "slider-button slider-button-active" type = "button">слайд 1</button>
-                        <button class = "slider-button" type = "button">слайд 2</button>
+                        <button class = "slider-arrow-left" type = "button"><span class = "visually-hidden">Влево</span></button>
+                        <button class = "slider-arrow-right" type = "button"><span class = "visually-hidden">Вправо</span></button>
+                        <ul>
+                            <li><div class = "slider-button active"><span class = "visually-hidden">слайд 1</span></div></li>
+                            <li><div class = "slider-button"><span class = "visually-hidden">слайд 2</span></div></li>
+                        </ul>
                     </div>
-
                 </div>
-                <div class = "category-sale">
-                    <h3>Скидки 50%</h3>
-                    <a href = "#" class = "btn-style-white">На 350 товаров</a>
-                </div>
-                <div class = "category-delivery">
-                    <h3>Доставка</h3>
-                    <a href = "#" class = "btn-style-white">Бесплатно</a>
+                <div class = "category-wrapper">
+                    <div class = "category-item sale">
+                        <h3>Скидки 50%</h3>
+                        <a href = "#" class = "btn-style-white">На 350 товаров</a>
+                    </div>
+                    <div class = "category-item delivery">
+                        <h3>Доставка</h3>
+                        <a href = "#" class = "btn-style-white">Бесплатно</a>
+                    </div>
                 </div>
             </div>
         </section>
