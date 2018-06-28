@@ -96,9 +96,43 @@
 
         var min = parseInt(getComputedStyle(thumbMin).left);
         var max = parseInt(getComputedStyle(thumbMax).left);
+        sliderLine.style.width = (max - min) + "px";
+        sliderLine.style.marginLeft = min + "px";
+        document.getElementById('min-value').value = parseInt(min * 300);
+        document.getElementById('max-value').value = parseInt(max * 300);
 
-        console.log(parseInt(min), parseInt(max));
+        thumbMin.onmousedown = function(e) {
+            var thumbCoords = getCoords(thumbMin);
+            var shiftX = e.pageX - thumbCoords.left;
 
+
+            document.onmousemove = function(e) {
+                var newLeft = e.pageX - shiftX - sliderCoords.left;
+
+                //если вне слайдера
+                if (newLeft < 0) {
+                    newLeft = 0;
+                }
+
+                if (newLeft > max - thumbMin.offsetWidth / 2) {
+                    newLeft = max - thumbMin.offsetWidth / 2;
+                }
+
+                min = newLeft;
+                sliderLine.style.marginLeft = min + "px";
+                sliderLine.style.width = (max - min) + "px";
+                thumbMin.style.left = newLeft + 'px';
+                document.getElementById('min-value').value = parseInt(newLeft * 300);
+            }
+
+            document.onmouseup = function() {
+                console.log(getCoords(thumbMin));
+                console.log(min);
+                document.onmousemove = document.onmouseup = null;
+            }
+
+            return false;
+        };
         thumbMax.onmousedown = function(e) {
             var thumbCoords = getCoords(thumbMax);
             var shiftX = e.pageX - thumbCoords.left;
@@ -114,9 +148,9 @@
                 newLeft = rangeEnd;
             }
             max = newLeft;
-            sliderLine.style.width = max+"px";
+            sliderLine.style.width = (max - min) +"px";
             thumbMax.style.left = newLeft + 'px';
-            document.getElementById('max-value').value = parseInt(newLeft * 200);
+            document.getElementById('max-value').value = parseInt(newLeft * 300);
         }
 
         document.onmouseup = function() {
