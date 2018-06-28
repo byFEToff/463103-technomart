@@ -1718,7 +1718,7 @@ footer {
     border-top: 7px solid #ee3643;
     box-shadow: 0 20px 40px 0 rgba(0,0,0,0.5);
 }
-.modal-cart p {
+.modal-cart h2 {
     font-size: 30px;
     line-height: 30px;
     padding: 20px 0;
