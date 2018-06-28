@@ -1,17 +1,37 @@
     // Модальное окно обратной связи
     var WriteUsLink = document.querySelector(".btn-write-us");
     var WriteUs = document.querySelector(".modal-write-us");
+
+
     if(WriteUsLink && WriteUs) {
+
+        var form = WriteUs.querySelector(".form-write-us");
+        var form_name = WriteUs.querySelector(".write-us-name");
+        var form_email = WriteUs.querySelector(".write-us-email");
+        var form_text = WriteUs.querySelector(".write-us-text");
+
         var WriteUsClose = WriteUs.querySelector(".btn-modal-close");
         WriteUsLink.addEventListener("click", function(evt) {
             evt.preventDefault();
             WriteUs.classList.add("modal-show");
+            form_name.focus();
         });
         WriteUsClose.addEventListener("click", function(evt) {
             evt.preventDefault();
             WriteUs.classList.remove("modal-show");
+            WriteUs.classList.remove("modal-error");
+        });
+        form.addEventListener("submit", function (evt) {
+            if (!form_name.value || !form_email.value || !form_text.value) {
+              evt.preventDefault();
+              WriteUs.classList.remove("modal-error");
+              WriteUs.offsetWidth = WriteUs.offsetWidth;
+              WriteUs.classList.add("modal-error");
+            }
         });
     }
+
+
 
     // Модальное окно добавления в корзину
     var CartLink = document.querySelectorAll(".btn-buy"); // Кнопка "Купить"
@@ -35,18 +55,81 @@
         });
     }
 
-    // Слайдер сервисов
-    var ServiceSlides = document.querySelectorAll(".service-slider button"); // Кнопки слайдера
-    var ServiceSlide = document.querySelectorAll(".service-slide"); // Сами слайды
-    // Перебираем все кнопки сладера
-    for(var i = 0; i < ServiceSlides.length; i++) {
-        // Если нажать на кнопку слайдера
-        ServiceSlides[i].addEventListener("click", function() {
-            // Слайду под тем же номером добавляем класс active
-            ServiceSlide[i].classList.add("active");
+    // Модальное окно интерактивной карты
+    var Maplink = document.querySelector(".contacts .map");
+    var MapModal = document.querySelector(".modal-map"); // Модальное окно
+    if(Maplink && MapModal) {
+        Maplink.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            MapModal.classList.add("modal-show");
         });
-    }
+        var MapClose = MapModal.querySelector(".btn-modal-close"); // Конопка закрытия (Крестик)
+        MapClose.addEventListener("click", function(evt) {
+            evt.preventDefault();
+            MapModal.classList.remove("modal-show");
+        });
+    }    
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Ползунок цен (только саксимальная цена) */
+    var sliderElem = document.querySelector('.bar-bg');
+    var sliderLine = document.querySelector('.bar-line');
+    var thumbMin = document.querySelector('.min-button');
+    var thumbMax = document.querySelector('.max-button');
+    if(sliderElem && sliderLine && thumbMin && thumbMax) {
+        var sliderCoords = getCoords(sliderElem);
+        var rangeEnd = sliderElem.offsetWidth - thumbMin.offsetWidth;
+
+        var min = parseInt(getComputedStyle(thumbMin).left);
+        var max = parseInt(getComputedStyle(thumbMax).left);
+
+        console.log(parseInt(min), parseInt(max));
+
+        thumbMax.onmousedown = function(e) {
+            var thumbCoords = getCoords(thumbMax);
+            var shiftX = e.pageX - thumbCoords.left;
+
+            document.onmousemove = function(e) {
+                var newLeft = e.pageX - shiftX - sliderCoords.left;
+            //если вне слайдера
+            if (newLeft < min + thumbMin.offsetWidth / 2) {
+                newLeft = min + thumbMin.offsetWidth / 2;
+            }
+
+            if (newLeft > rangeEnd) {
+                newLeft = rangeEnd;
+            }
+            max = newLeft;
+            sliderLine.style.width = max+"px";
+            thumbMax.style.left = newLeft + 'px';
+            document.getElementById('max-value').value = parseInt(newLeft * 200);
+        }
+
+        document.onmouseup = function() {
+            document.onmousemove = document.onmouseup = null;
+        }
+
+        return false;
+    };
+}   
+function getCoords(elem) {
+    var box = elem.getBoundingClientRect();
+    return {
+        top: box.top + pageYOffset,
+        left: box.left + pageXOffset
+    };
+}

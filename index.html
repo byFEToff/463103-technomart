@@ -7,10 +7,10 @@
     <link href = "css/style.css" rel = "stylesheet">
 </head>
 <body>
-  
+
     <!-- ШАПКА -->
     <header class = "main-header">
-        
+
         <!-- Верхняя часть шапки -->
         <div class = "main-header-top">
             <div class = "container">
@@ -49,17 +49,20 @@
                 </div>
 
                 <div class = "header-user-panel">
-                    <a href = "#" class = "login">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        width="20px" height="17px" viewBox="0 0 20 17" enable-background="new 0 0 20 17" xml:space="preserve">
-                        <g>
-                            <polygon fill="#32425C" points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	"/>
-                        </g>
-                        <path fill="#32425C" d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,1.811,19.164,0,16.986,0h-5.027
-                        v1.99h5.027c0.839,0,0.992,0.681,1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z"/>
-                    </svg>Войти
-                </a>
-                <a href = "#" class = "register">Регистрация</a>
+                    <div class="user-panel-row">
+                        <a href = "#" class = "login">
+                            <svg fill="#c5c5c5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                            width="20px" height="17px" viewBox="0 0 20 17" enable-background="new 0 0 20 17" xml:space="preserve">
+                            <g>
+                                <polygon points="14.875,8.5 6,0 6,6 0,6 0,11 6,11 6,17 	"/>
+                            </g>
+                            <path d="M16.986,15.01h-5.027V17h5.027c2.178,0,3.004-1.81,3.029-3.026V3.028C19.99,1.811,19.164,0,16.986,0h-5.027
+                            v1.99h5.027c0.839,0,0.992,0.681,1.01,1.057v10.904C17.979,14.327,17.825,15.01,16.986,15.01z"/>
+                        </svg>
+                        Войти
+                    </a>
+                    <a href = "#" class = "register">Регистрация</a>
+                </div>
             </div>
         </div>
         <nav class = "site-navigation">
@@ -97,24 +100,28 @@
                 <a href = "#" class = "btn-style-opacity">Для стройки</a>
             </div>
             <div class = "category-item slider">
-                <div class = "slide slide-active">
-                    <h3>Перфораторы</h3>
-                    <p>Настоящие мужские игрушки</p>
-                    <a href = "catalog.html" class = "btn-style-red">Открыть каталог</a>
-                </div>
-                <div class = "slide">
-                    <h3>Дрели</h3>
-                    <p>Соседям на радость!</p>
-                    <a href = "catalog.html" class = "btn-style-red">Открыть каталог</a>
-                </div>
+                <input class="visually-hidden" type="radio" id="slide-1" name="category-toggle" checked>
+                <input class="visually-hidden" type="radio" id="slide-2" name="category-toggle">
                 <div class = "slider-buttons">
-                    <button class = "slider-arrow-left" type = "button"><span class = "visually-hidden">Влево</span></button>
-                    <button class = "slider-arrow-right" type = "button"><span class = "visually-hidden">Вправо</span></button>
-                    <ul>
-                        <li><div class = "slider-button active"><span class = "visually-hidden">слайд 1</span></div></li>
-                        <li><div class = "slider-button"><span class = "visually-hidden">слайд 2</span></div></li>
-                    </ul>
+                    <label class="slider-button" for="slide-1">Первый</label>
+                    <label class="slider-button" for="slide-2">Второй</label>
                 </div>
+                <ul class = "slider-list">
+                    <li class = "slide">
+                        <label class = "slider-arrow-left" for="slide-2">Назад</label>
+                        <label class = "slider-arrow-right" for="slide-2">Вперёд</label>
+                        <h3>Перфораторы</h3>
+                        <p>Настоящие мужские игрушки</p>
+                        <a href = "catalog.html" class = "btn-style-red">Открыть каталог</a>
+                    </li>
+                    <li class = "slide">
+                        <label class = "slider-arrow-left" for="slide-1">Назад</label>
+                        <label class = "slider-arrow-right" for="slide-1">Вперёд</label>
+                        <h3>Дрели</h3>
+                        <p>Соседям на радость!</p>
+                        <a href = "catalog.html" class = "btn-style-red">Открыть каталог</a>
+                    </li>
+                </ul>
             </div>
             <div class = "category-wrapper">
                 <div class = "category-item sale">
@@ -204,55 +211,58 @@
             <h2>Сервисы</h2>
             <p>Хороший интернет-магазин отличается от плохого не только ценами! Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
             <div class = "service-slider">
-                <ul>
-                    <li><button type = "button" class = "active">Доставка</button></li>
-                    <li><button type = "button">Гарантия</button></li>
-                    <li><button type = "button">Кредит</button></li>
-                </ul>
-                <div class = "service-slider-container">
-                    <div class = "service-slide delivery active">
-                        <h3>Доставка</h3>
-                        <p>Мы с удовольствием доставим ваш товар прямо<br> к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,<br> поднимая его на ваш этаж!</p>
-                    </div>
-                    <div class = "service-slide guarantee">
-                        <h3>Гарантия</h3>
-                        <p>Если купленный у нас товар поломается или заискрит,<br> а также в случае пожара, спровоцированного его возгаранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.<br> Дом уж восстановите как-нибудь сами.</p>
-                    </div>
-                    <div class = "service-slide credit">
-                        <h3>Кредит</h3>
-                        <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
-                        <a class = btn-style-red href = "#">Отправить заявку</a>
-                    </div>
+                <input class="visually-hidden" type="radio" id="service-1" name="service-toggle" checked>
+                <input class="visually-hidden" type="radio" id="service-2" name="service-toggle">
+                <input class="visually-hidden" type="radio" id="service-3" name="service-toggle">
+                <div class="slider-controls">
+                  <label class="slider-controls-item slider-controls-item--1" for="service-1">Доставка</label>
+                  <label class="slider-controls-item slider-controls-item--2" for="service-2">Гарантия</label>
+                  <label class="slider-controls-item slider-controls-item--3" for="service-3">Кредит</label>
                 </div>
-            </div>
+            <ul class = "service-slider-list">
+                <li class = "service-slide delivery active">
+                    <h3>Доставка</h3>
+                    <p>Мы с удовольствием доставим ваш товар прямо<br> к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем,<br> поднимая его на ваш этаж!</p>
+                </li>
+                <li class = "service-slide guarantee">
+                    <h3>Гарантия</h3>
+                    <p>Если купленный у нас товар поломается или заискрит,<br> а также в случае пожара, спровоцированного его возгаранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый.<br> Дом уж восстановите как-нибудь сами.</p>
+                </li>
+                <li class = "service-slide credit">
+                    <h3>Кредит</h3>
+                    <p>Залезть в долговую яму стало проще! Кредитные консультанты придут вам на помощь.</p>
+                    <a class = btn-style-red href = "#">Отправить заявку</a>
+                </li>
+            </ul>
         </div>
-    </section>
-    
-    <!-- О компании  -->
-    <section class = "info">
-        <div class = "container">
-            <div class = "about-us">
-                <h2>Компания «Техномарт»</h2>
-                <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
-                <p>Мы можем доставить ваш товар в самые отдаленные точки России!<br>
-                Техномарт работает со многими транспортными компаниями:</p>
-                <ul>
-                    <li>Деловые линии</li>
-                    <li>Автотрейдинг</li>
-                    <li>ЖелДорЭкспедиция</li>
-                </ul>
-                <a href = "#" class = "btn-style-red">Подробнее о компании</a>
-            </div>
-            <div class = "contacts">
-                <h2>Контакты</h2>
-                <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-                <a href = "#" class = "map">
-                    <img src = "img/map.png" width="300px" height="158px" alt = "г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
-                </a>
-                <button class = "btn-style-red btn-write-us" type = "button">Заблудились? Напишите нам!</button>
-            </div>
+    </div>
+</section>
+
+<!-- О компании  -->
+<section class = "info">
+    <div class = "container">
+        <div class = "about-us">
+            <h2>Компания «Техномарт»</h2>
+            <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
+            <p>Мы можем доставить ваш товар в самые отдаленные точки России!<br>
+            Техномарт работает со многими транспортными компаниями:</p>
+            <ul>
+                <li>Деловые линии</li>
+                <li>Автотрейдинг</li>
+                <li>ЖелДорЭкспедиция</li>
+            </ul>
+            <a href = "#" class = "btn-style-red">Подробнее о компании</a>
         </div>
-    </section>
+        <div class = "contacts">
+            <h2>Контакты</h2>
+            <p>Вы можете забрать товар сами, заехав в наш офис:</p>
+            <a href = "#" class = "map">
+                <img src = "img/map.png" width="300px" height="158px" alt = "г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8">
+            </a>
+            <button class = "btn-style-red btn-write-us" type = "button">Заблудились? Напишите нам!</button>
+        </div>
+    </div>
+</section>
 </main>
 <!-- ПОДВАЛ -->
 <footer>
@@ -339,7 +349,7 @@
 
 <section class = "modal modal-map">
     <button class = "btn-modal-close" type = "button"><span class = "visually-hidden">Закрыть</span></button>
-    <p>Тут будет карта</p>
+    <iframe src="https://yandex.ru/map-widget/v1/-/CBuiJ4qCwC" width="940" height="446"></iframe> 
 </section>
 
 <script type="text/javascript" src="js/scripts.js"></script>
