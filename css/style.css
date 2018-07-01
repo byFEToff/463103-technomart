@@ -489,6 +489,7 @@ img {
     width: 300px;
     height: 123px;
     margin-bottom: 20px;
+    position: relative;
 }
 .category-item.materials {
     background-color: #ffbf47;
@@ -719,7 +720,7 @@ img {
     padding-bottom: 20px;
     margin-top: 20px;
 }
-.products-item .flag{
+.flag{
     position:absolute;
     top:-1px;
     right:-1px;
@@ -727,9 +728,13 @@ img {
     height:60px;
     text-indent:-1000px;
     overflow:hidden;
-     z-index:20;
+    z-index:20;
 }
-.products-item .flag-new{
+.category .flag {
+    top: 0;
+    right: 0;
+}
+.flag-new{
     background:url("../img/new-flag.png") no-repeat 0 0;
 }
 
