@@ -139,31 +139,31 @@
 
             document.onmousemove = function(e) {
                 var newLeft = e.pageX - shiftX - sliderCoords.left;
-            //если вне слайдера
-            if (newLeft < min + thumbMin.offsetWidth / 2) {
-                newLeft = min + thumbMin.offsetWidth / 2;
+                //если вне слайдера
+                if (newLeft < min + thumbMin.offsetWidth / 2) {
+                    newLeft = min + thumbMin.offsetWidth / 2;
+                }
+
+                if (newLeft > rangeEnd) {
+                    newLeft = rangeEnd;
+                }
+                max = newLeft;
+                sliderLine.style.width = (max - min) +"px";
+                thumbMax.style.left = newLeft + 'px';
+                document.getElementById('max-value').value = parseInt(newLeft * 300);
             }
 
-            if (newLeft > rangeEnd) {
-                newLeft = rangeEnd;
+            document.onmouseup = function() {
+                document.onmousemove = document.onmouseup = null;
             }
-            max = newLeft;
-            sliderLine.style.width = (max - min) +"px";
-            thumbMax.style.left = newLeft + 'px';
-            document.getElementById('max-value').value = parseInt(newLeft * 300);
-        }
 
-        document.onmouseup = function() {
-            document.onmousemove = document.onmouseup = null;
-        }
-
-        return false;
-    };
-}   
-function getCoords(elem) {
-    var box = elem.getBoundingClientRect();
-    return {
-        top: box.top + pageYOffset,
-        left: box.left + pageXOffset
-    };
-}
+            return false;
+        };
+    }   
+    function getCoords(elem) {
+        var box = elem.getBoundingClientRect();
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+        };
+    }

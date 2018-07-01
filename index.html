@@ -26,17 +26,16 @@
                             C0,11.643,3.358,15,7.5,15c1.71,0,3.282-0.579,4.544-1.542L15.586,17L17,15.586z M2,7.5C2,4.467,4.467,2,7.5,2
                             C10.532,2,13,4.467,13,7.5c0,3.032-2.468,5.5-5.5,5.5C4.467,13,2,10.532,2,7.5z"/>
                         </g>    
-                    </svg>
-                </button>
-            </form>  
-
-            <ul class = "user-navigation">
-                <li><a class = "tabs" href = "#">Закладки: 0</a></li>
-                <li><a class = "basket" href = "#">Корзина: 0</a></li>
-                <li><a class = "order" href = "#">Оформить заказ</a></li>
-            </ul>
+                        </svg>
+                    </button>
+                </form>  
+                <ul class = "user-navigation">
+                    <li><a class = "tabs" href = "#">Закладки: 0</a></li>
+                    <li><a class = "basket" href = "#">Корзина: 0</a></li>
+                    <li><a class = "order" href = "#">Оформить заказ</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
 
     <!-- Нижняя часть шапки -->
     <div class = "main-header-bottom">
@@ -86,7 +85,7 @@
     <div class = "container">
         <!-- Категории  -->
         <section class = "category">   
-            <h2 class = "visually-hidden">Категории</h2> 
+            <!-- <h2 class = "visually-hidden">Категории</h2>  -->
             <div class = "category-item materials">
                 <h3>Материалы</h3>
                 <a href = "#" class = "btn-style-opacity">На любой вкус</a>
@@ -173,6 +172,7 @@
                     <p class = "price">25500 Р.</p>
                 </li>
                 <li class = "products-item">
+                    <div class="flag flag-new">новинка</div>
                     <img src = "img/perforator2.jpg" width = "218" height = "182" alt = "Перфоратор BOSCH BFG 2000">
                     <div class = "actions">
                         <a class = "btn-buy" href = "#">Купить</a>
@@ -191,15 +191,15 @@
                 <a href = "#" class = "btn-style-red">Все производители</a>
             </div>
             <div class = "brands-content">
-                <ul>
-                    <li><a href = "#"><img src = "img/brands/bosch.png" width="126" height="35" alt = "bosch"></a></li>
-                    <li><a href = "#"><img src = "img/brands/makita.png" width="123" height="40" alt = "makita"></a></li>
-                    <li><a href = "#"><img src = "img/brands/dewalt.png" width="146" height="44" alt = "dewalt"></a></li>
-                    <li><a href = "#"><img src = "img/brands/interscol.png" width="172" height="27" alt = "Интерскол"></a></li>
-                    <li><a href = "#"><img src = "img/brands/hitachi.png" width="142" height="19" alt = "hitachi"></a></li>
-                    <li><a href = "#"><img src = "img/brands/lg.png" width="121" height="73" alt = "lg"></a></li>
-                    <li><a href = "#"><img src = "img/brands/aeg.png" width="151" height="96" alt = "aeg"></a></li>
-                    <li><a href = "#"><img src = "img/brands/metabo.png" width="204" height="69" alt = "metabo"></a></li>
+                <ul class = "brands-list">
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/bosch.png" width="126" height="35" alt = "bosch"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/makita.png" width="123" height="40" alt = "makita"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/dewalt.png" width="146" height="44" alt = "dewalt"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/interscol.png" width="172" height="27" alt = "Интерскол"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/hitachi.png" width="142" height="19" alt = "hitachi"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/lg.png" width="121" height="73" alt = "lg"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/aeg.png" width="151" height="96" alt = "aeg"></a></li>
+                    <li class = "brands-item"><a href = "#"><img src = "img/brands/metabo.png" width="204" height="69" alt = "metabo"></a></li>
                 </ul>
             </div>
         </section>
@@ -292,14 +292,14 @@
     <div class = "footer-bottom">
         <div class = "container">
             <p class = "copyright">© 2010-2017 Компания «Техномарт» Все права защищены</p>
-            <div class = "feedback">
+            <div class = "footer-feedback">
                 <a href = "#" class = "social-btn btn-vk"><span class = "visually-hidden">ВКонтакте</span></a>
                 <a href = "#" class = "social-btn btn-fb"><span class = "visually-hidden">FaceBook</span></a>
                 <a href = "#" class = "social-btn btn-inst"><span class = "visually-hidden">Instagram</span></a>
             </div>
-            <div class = "links">
+            <div class = "footer-links">
                 <p class = "email">Обратная связь: <a href = "mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
-                <p class = "site">Разработано — <a href = "https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
+                <p class = "site">Разработано – <a href = "https://htmlacademy.ru/intensive/htmlcss">htmlacademy.ru</a></p>
             </div>
         </div>
     </div>
