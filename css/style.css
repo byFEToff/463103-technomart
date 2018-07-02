@@ -82,7 +82,10 @@ img {
 .search {
     background: none;
     border: none;
-    height: 42px;
+    font-size: 17px;
+    line-height: 18px;
+    /* height: 42px; */
+    padding: 12px 0;
     padding-left:49px;
     width: 270px;
     color: #fff;
@@ -628,6 +631,7 @@ img {
     position: relative;
   
     display: inline-block;
+    vertical-align: middle;
     width: 6px;
     height: 6px;
     
@@ -1044,17 +1048,25 @@ img {
     font-weight: 100;
 }
 .service-slide p {
-    width: 275px;
-    margin-bottom: 0;
+    margin-bottom: 26px;
 }
 .service-slide.delivery {
     background-image: url(../img/service/service-delivery.png);
 }
+.service-slide.delivery p {
+    width: 275px;
+}
 .service-slide.guarantee {
     background-image: url(../img/service/service-guarantee.png);
 }
+.service-slide.guarantee p {
+    width: 375px;
+}
 .service-slide.credit {
     background-image: url(../img/service/service-credit.png);
+}
+.service-slide.credit p {
+    width: 280px;
 }
 
 .service-slide .btn-style-red {
@@ -1160,6 +1172,7 @@ img {
 .breadcrumbs-item:first-child a::after {
     content: "";
     display: inline-block;
+    vertical-align: middle;
     background: url(../img/svg/icon-home.svg) no-repeat;
     width: 15px;
     height: 12px;
@@ -1244,12 +1257,14 @@ img {
 .price-range {
     display: flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
 }
 .price-range input{
     width: 95px;
-    height: 36px;
     border: none;
+    padding: 9px 0 11px;
+    font-size: 17px;
+    line-height: 18px;
     text-align: center;
     background-color: #f7f3ec;
 }
@@ -1315,6 +1330,8 @@ img {
 .filter-brands label {
     letter-spacing: -1px;
     cursor: pointer;
+    font-size: 15px;
+    line-height: 20px;
 }
 .filter-brands label::before {
     content: "";
@@ -1358,7 +1375,9 @@ input:disabled ~ label{
     opacity: 0;
 }
 .filter-power label {
-    letter-spacing: -1px
+    letter-spacing: -1px;
+    font-size: 15px;
+    line-height: 20px;  
 }
 .filter-power label::before {
     content: "";
@@ -1928,7 +1947,7 @@ footer {
 }
 .form-write-us p {
     margin: 0;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
 }
 .form-write-us p:last-child {
     margin-bottom: 0;
@@ -1939,6 +1958,8 @@ footer {
     border-radius: 3px;
     padding: 10px 15px;
     resize: none;
+    font-size: 13px;
+    line-height: 18px;
 }
 .form-write-us b {
     font-size: 18px;
@@ -1948,6 +1969,7 @@ footer {
 .write-us-name,
 .write-us-email {
     width: 220px;
+    height: 37px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
 }
